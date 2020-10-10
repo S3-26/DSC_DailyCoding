@@ -1,0 +1,71 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+class Array{
+  int arr[100]={0},size=0,d=0;
+  public:
+    void accept();
+    void choco();
+    int bigg();
+    int  big(int* ,int*,int*);
+    int small(int*,int*,int*);
+};
+void Array::accept(){
+  cout<<"Enter size of array : ";
+  cin>>size;
+  cout<<"Enter the elements of array : ";
+  for(int j=0;j<size;j++)
+      cin>>arr[j];
+}
+
+
+int Array::bigg()
+{
+  static int max=0;
+  for(int i=0;i<size;i++)
+  {
+    if(arr[i]>max)
+    max=arr[i];
+  }
+  return max;
+}
+int  Array::big(int *p,int *q,int *r){
+  return  *p>*q?(*p>*r?*p:*r):(*q>*r?*q:*r);
+}
+int Array::small(int *p,int *q,int *r){
+  return *p<*q?(*p<*r?*p:*r):(*q<*r?*q:*r);
+}
+void Array::choco(){
+  int min=bigg(),c,d,a,b;
+  cout<<min;
+  for(int i=0;i<size-2;i++)
+  {
+    for(int j=i+1;j<size-1;j++)
+    {
+      for(int k=j+1;k<size;k++)
+      {
+        
+         a=big(&arr[i],&arr[j],&arr[k]);
+         b=small(&arr[i],&arr[j],&arr[k]);
+        if(min>abs(a-b))
+        {
+           c=a;
+           d=b;
+           min=abs(a-b);   
+           } 
+      }
+    }
+  }
+  cout<<"\nMinimum difference between  : \n"<<c<<" "<<d<<" is "<<min;
+  
+}
+int main()
+{
+    
+    Array obj;
+    obj.accept();
+    obj.choco();
+}
+    
