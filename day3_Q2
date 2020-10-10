@@ -1,0 +1,59 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+//Compiler version g++ 6.3.0
+class Array{
+  int arr[100]={0},size=0,d=0;
+  public:
+    void accept();
+    void get();
+    void sum();
+};
+void Array::accept(){
+  cout<<"Enter size of array : ";
+  cin>>size;
+  cout<<"Enter the difference : ";
+  cin>>d;
+  cout<<"Enter the elements of array : ";
+  for(int j=0;j<size;j++)
+    {
+    
+      cin>>arr[j];
+     
+    }
+}
+
+void Array::get(){
+   cout<<"Array : ";
+    for(int j=0;j<size;j++)
+    {
+     cout<< arr[j]<<" ";   
+  }
+}
+void Array::sum(){
+  int i=0,sum1=0;
+  for(int i=0;i<size;i++)
+  {
+     for(int j=i+1;j<size;j++)
+    
+      { 
+        sum1=0;
+         sum1=abs(arr[i]-arr[j]);
+        if(sum1==d)
+        {
+          cout<<" \n"<<arr[i]<<" "<<arr[j];
+          break;
+          }
+    }
+  }
+  
+}
+int main()
+{
+    
+    Array obj;
+    obj.accept();
+    obj.get();
+    obj.sum();
+}
