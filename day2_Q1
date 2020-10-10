@@ -45,8 +45,10 @@ void Array::sum(){
     if(s==val)
           break ;
   }
+   if(s==Val)
   cout<<"\nArray indices : "<<i<<" "<<j;
-  
+   else
+cout<<"\nThere is no subarray with sum : "<<s;  
 }
 int main()
 {
@@ -55,4 +57,5 @@ int main()
     obj.accept();
     obj.get();
     obj.sum();
+return 0;
 }
