@@ -17,11 +17,7 @@ void Array::accept(){
   cin>>k;
   cout<<"Enter the elements of array : ";
   for(int j=0;j<size;j++)
-    {
-    
-      cin>>arr[j];
-     
-    }
+    cin>>arr[j];
 }
 void Array::set(){
   int i=0;
@@ -34,12 +30,10 @@ void Array::set(){
     }
   }
 }
-void Array::get(){
- 
+void Array::get()
+{
     for(int j=0;j<size*k;j++)
-    {
-     cout<< brr[j]<<" ";   
-  }
+        cout<< brr[j]<<" ";   
 }
 void Array::sum(){
   int i=0,sum=0,max=0;
@@ -49,14 +43,12 @@ void Array::sum(){
     sum=brr[i];
     for(int j=i+1;j<size*k;j++)
     {
-     sum+=brr[j];
+        sum+=brr[j];
        if(sum>max)
-        { max=sum;
-          cout<<endl<<max<<endl;}
+         max=sum;
     }
   }
-  cout<<"\nsum of subarray : "<<max;
-  
+  cout<<"\nsum of subarray : "<<max; 
 }
 int main()
 {
@@ -66,4 +58,5 @@ int main()
     obj.set();
     obj.get();
     obj.sum();
+   return 0;
 }
